@@ -1,0 +1,10 @@
+{
+  "name": "word-search",
+  "version": "0.1",
+  "author": "Sara Venkatesh <sarajvenkatesh@gmail.com>",
+  "license": "MIT",
+  "private": "true",
+  "dependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
