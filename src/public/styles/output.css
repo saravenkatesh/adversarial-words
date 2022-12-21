@@ -551,6 +551,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.m-auto {
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+}
+
 .grid {
   display: grid;
 }
@@ -571,12 +579,20 @@ video {
   width: 16rem;
 }
 
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.flex-col {
+  flex-direction: column;
 }
 
 .place-content-center {
   place-content: center;
+}
+
+.items-center {
+  align-items: center;
 }
 
 .gap-4 {
@@ -585,4 +601,12 @@ video {
 
 .justify-self-end {
   justify-self: end;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.align-middle {
+  vertical-align: middle;
 }
