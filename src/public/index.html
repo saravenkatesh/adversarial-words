@@ -12,12 +12,19 @@
         <div id="guessList" class="flex flex-col justify-self-center">
         </div>
 
-       <div class="justify-self-end flex items-center">
-	      <input type="input" id="guessWord" placeholder="Guess a word" class="w-64 h-10"/>
-       </div>
-	      <input type="submit" id="submit" class="w-64"/>
+        <div class="justify-self-end flex items-center">
+	        <input type="input" id="guessWord" placeholder=" Guess a word" class="w-64 h-10 border rounded-lg"/>
+        </div>
+
+        <div class="flex items-center">
+	        <input type="submit" id="submit" class="w-64 h-10 border bg-blue-200 disabled:bg-gray-200 hover:bg-blue-300 rounded-lg"/>
+        </div>
+      </div> 
+
+      <div id="success" class="text-center text-blue-600 text-2xl">
       </div>
     </div>
+
 
     <script type="module" src="main.js">
     </script>

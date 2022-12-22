@@ -3,6 +3,7 @@ import { CORNCOB_WORD_LIST } from "./constants.js";
 const input = document.getElementById('guessWord');
 const submit = document.getElementById('submit');
 const guessList = document.getElementById('guessList');
+const successNode = document.getElementById('success');
 
 const wordListLength = CORNCOB_WORD_LIST.length;
 const wordIndex = Math.floor((Math.random()) * wordListLength);
@@ -20,19 +21,23 @@ const makeGuessLine = () => {
 }
 
 const onSubmit = () => {
+  console.log(CORNCOB_WORD_LIST[wordIndex]);
   const guessWord = input.value;
   if (!CORNCOB_WORD_LIST.includes(guessWord)) {
     console.log('Not a word that we know!');
   }
   if (guessWord === CORNCOB_WORD_LIST[wordIndex]) {
-    console.log( 'Success');
+    guessHints.push('s');
+    const successDiv = document.createElement('div');
+    const success = document.createTextNode('Success!');
+    successDiv.append(success);
+    successNode.append(success);
+    submit.disabled = true;
   };
   if (guessWord < CORNCOB_WORD_LIST[wordIndex]) {
-    console.log( 'Word comes after');
     guessHints.push('a');
   };
   if (guessWord > CORNCOB_WORD_LIST[wordIndex]) {
-    console.log( 'Word comes before');
     guessHints.push('b');
   };
   guesses.push(guessWord);
