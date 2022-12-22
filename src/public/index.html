@@ -7,17 +7,21 @@
     <link href="./styles/output.css" rel="stylesheet">
   </head>
   <body>
-    <div class="h-screen">
+    <div class="h-screen"> 
+      <br></br>
+      <div id="success" class="text-center text-blue-600 text-2xl">
+      </div>
+
       <div class="h-5/6 grid grid-cols-3 gap-4 place-content-center align-middle"> 
         <div id="guessList" class="flex flex-col justify-self-center">
         </div>
 
         <div class="justify-self-end flex items-center">
-	        <input type="input" id="guessWord" placeholder=" Guess a word" class="w-64 h-10 border rounded-lg pl-1"/>
+	        <input type="input" id="guessWord" placeholder="Guess a word" class="w-64 h-10 border rounded-lg pl-1"/>
         </div>
 
         <div class="flex items-center">
-	        <input type="submit" id="submit" class="w-64 h-10 border bg-blue-200 disabled:bg-gray-200 hover:bg-blue-300 rounded-lg"/>
+	        <input type="submit" id="submit" class="w-64 h-10 border bg-blue-300 disabled:bg-gray-200 hover:bg-blue-400 rounded-lg"/>
         </div>
       </div> 
 
