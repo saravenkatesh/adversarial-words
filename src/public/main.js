@@ -20,6 +20,9 @@ const wordIndex = Math.floor((Math.random()) * wordListLength);
 const guesses = [];
 const guessHints = [];
 
+// TODO: load the correct wordlist based on desires
+const getWordList = () => {}
+
 const onSubmit = () => {
   // TODO: Add a 'give up' button instead of logging the solution
   console.log(CORNCOB_WORD_LIST[wordIndex]);
@@ -46,6 +49,9 @@ const onSubmit = () => {
   });
 
   input.value = '';
+
+  languageButton.disabled = true;
+  modeButton.disabled = true;
 };
 
 document.onkeydown = e => {
@@ -57,13 +63,23 @@ document.onkeydown = e => {
 submit.addEventListener('click', onSubmit);
 
 // Add functionality to choose language menu
+// TODO: figure out 'select' styling and replace the buttons with select
 const languageChoices = [...languageOptions.getElementsByTagName('button')];
 languageChoices.forEach(choice => {
-  choice.addEventListener('click', () => languageButton.innerText = choice.innerText);
+  choice.addEventListener('click', () => {
+    if (guesses.length === 0) {
+      languageButton.innerText = choice.innerText;
+    };
+  });
 });
 
 // Add functionality to choose mode menu
+// TODO: figure out 'select' styling and replace the buttons with select
 const modeChoices = [...modeOptions.getElementsByTagName('button')];
 modeChoices.forEach(choice => {
-  choice.addEventListener('click', () => modeButton.innerText = choice.innerText);
+  choice.addEventListener('click', () => {
+    if (guesses.length === 0) {
+      modeButton.innerText = choice.innerText;
+    };
+  });
 });
