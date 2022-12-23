@@ -1,5 +1,4 @@
-import { CORNCOB_WORD_LIST } from "./constants.js";
-import { appendGuessBox } from "./modules/guessBox.js";
+import { CORNCOB_WORD_LIST } from "./constants/harderWordList.js";
 import { normalModeSubmit } from "./modules/normalModeSubmit.js";
 
 const input = document.getElementById('guessWord');

@@ -8,8 +8,57 @@
   </head>
   <body>
     <div class="h-screen"> 
+
+
+      <div class="bg-white px-2 py-4 fixed w-full top-0 left-0 border-b border-gray-200 flex">
+        <button type="button" data-dropdown-toggle="language" class="w-28 text-white bg-blue-500 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 ml-4 flex">
+          English 
+          <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>
+        <div id="language" class="bg-white hidden shadow rounded w-32 ml-3">
+          <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 ml-2">
+            <li>
+              <button type="button" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                English
+              </button>
+            </li>
+            <li>
+              <button type="button" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                German
+              </button>
+            </li>
+          </ul>
+        </div>
+
+
+        <button type="button" data-dropdown-toggle="mode" class="w-28 text-white bg-blue-500 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 mr-4 ml-4 flex">
+          Easier
+          <svg class="w-4 h-4" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+        </button>     
+        <div id="mode" class="bg-white hidden shadow rounded w-32 ml-3">
+          <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 ml-2">
+            <li>
+              <button type="button" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                Easier
+              </button>
+            </li>
+            <li>
+              <button type="button" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                Harder
+              </button>
+            </li>
+             <li>
+              <button type="button" class="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                Impossible
+              </button>
+            </li>        
+           </ul>
+        </div>
+      </div>
+      
+
       <br></br>
-      <div id="success" class="text-center text-blue-600 text-2xl">
+      <div id="success" class="text-center text-blue-600 text-2xl py-24">
       </div>
 
       <div class="h-5/6 grid grid-cols-3 gap-4 place-content-center align-middle"> 
@@ -21,7 +70,7 @@
         </div>
 
         <div class="flex items-center">
-	        <input type="submit" id="submit" class="w-64 h-10 border bg-blue-300 disabled:bg-gray-200 hover:bg-blue-400 rounded-lg"/>
+	        <input type="submit" id="submit" class="text-white w-64 h-10 border bg-blue-500 disabled:bg-gray-200 hover:bg-blue-700 rounded-lg"/>
         </div>
       </div> 
 
@@ -30,7 +79,7 @@
     </div>
 
 
-    <script type="module" src="main.js">
-    </script>
+    <script type="module" src="main.js"></script>
+    <script src="./flowbite/dist/flowbite.js"></script>
   </body>
 </html>
