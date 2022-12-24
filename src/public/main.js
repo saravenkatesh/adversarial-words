@@ -31,7 +31,9 @@ const setWordList = () => {
 
 const onSubmit = () => {
   // TODO: Add a 'give up' button instead of logging the solution
-  console.log(CORNCOB_WORD_LIST[wordIndex]);
+  console.log(wordList[wordIndex]);
+  console.log(wordListLength);
+
   const guessWord = input.value;
   if (!input.value) {
     return;

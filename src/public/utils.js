@@ -1,6 +1,7 @@
-import { ENGLISH, EASIER, HARDER } from "./constants/choices";
-import { EASIER_WORD_LIST } from "./constants/easierWordList";
-import { CORNCOB_WORD_LIST } from "./constants/harderWordList";
+import { ENGLISH, GERMAN, EASIER, HARDER } from "./constants/choices.js";
+import { EASIER_WORD_LIST } from "./constants/easierWordList.js";
+import { CORNCOB_WORD_LIST } from "./constants/harderWordList.js";
+import { EASIER_GERMAN_WORD_LIST } from "./constants/easierGermanWordList.js";
 
 export const onSelectClick = (target, options, clickCondition, afterClickAction) => {
   options.forEach(choice => {
@@ -17,5 +18,8 @@ export const choicesToWordList = {
   [ENGLISH]: {
     [EASIER]: EASIER_WORD_LIST,
     [HARDER]: CORNCOB_WORD_LIST,
+  },
+  [GERMAN]: {
+    [EASIER]: EASIER_GERMAN_WORD_LIST,
   },
 };
