@@ -1,6 +1,6 @@
 import { CORNCOB_WORD_LIST } from "./constants/harderWordList.js";
 import { normalModeSubmit } from "./modules/normalModeSubmit.js";
-import { onSelectClick } from "./utils.js";
+import { onSelectClick, choicesToWordList } from "./utils.js";
 
 // Nodes for processing input
 const input = document.getElementById('guessWord');
@@ -16,13 +16,18 @@ const languageOptions = document.getElementById('languageOptions');
 const modeButton = document.getElementById('modeButton');
 const modeOptions = document.getElementById('modeOptions');
 
-const wordListLength = CORNCOB_WORD_LIST.length;
-const wordIndex = Math.floor((Math.random()) * wordListLength);
+var wordList;
+var wordListLength;
+var wordIndex;
+
 const guesses = [];
 const guessHints = [];
 
-// TODO: load the correct wordlist based on desires
-const getWordList = () => {}
+const setWordList = () => { 
+  wordList = choicesToWordList[languageButton.innerText][modeButton.innerText] 
+  wordListLength = wordList.length;
+  wordIndex = Math.floor(Math.random()*wordListLength);
+};
 
 const onSubmit = () => {
   // TODO: Add a 'give up' button instead of logging the solution
@@ -66,9 +71,12 @@ submit.addEventListener('click', onSubmit);
 // Add functionality to choose language menu
 // TODO: figure out 'select' styling and replace the buttons with select
 const languageChoices = [...languageOptions.getElementsByTagName('button')];
-onSelectClick(languageButton, languageChoices, guesses.length === 0);
+onSelectClick(languageButton, languageChoices, guesses.length === 0, setWordList);
 
 // Add functionality to choose mode menu
 // TODO: figure out 'select' styling and replace the buttons with select
 const modeChoices = [...modeOptions.getElementsByTagName('button')];
-onSelectClick(modeButton, modeChoices, guesses.length === 0);
+onSelectClick(modeButton, modeChoices, guesses.length === 0, setWordList);
+
+// Set the initial word list
+setWordList();
