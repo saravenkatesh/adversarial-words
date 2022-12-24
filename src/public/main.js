@@ -1,5 +1,6 @@
 import { CORNCOB_WORD_LIST } from "./constants/harderWordList.js";
 import { normalModeSubmit } from "./modules/normalModeSubmit.js";
+import { onSelectClick } from "./utils.js";
 
 // Nodes for processing input
 const input = document.getElementById('guessWord');
@@ -65,21 +66,9 @@ submit.addEventListener('click', onSubmit);
 // Add functionality to choose language menu
 // TODO: figure out 'select' styling and replace the buttons with select
 const languageChoices = [...languageOptions.getElementsByTagName('button')];
-languageChoices.forEach(choice => {
-  choice.addEventListener('click', () => {
-    if (guesses.length === 0) {
-      languageButton.innerText = choice.innerText;
-    };
-  });
-});
+onSelectClick(languageButton, languageChoices, guesses.length === 0);
 
 // Add functionality to choose mode menu
 // TODO: figure out 'select' styling and replace the buttons with select
 const modeChoices = [...modeOptions.getElementsByTagName('button')];
-modeChoices.forEach(choice => {
-  choice.addEventListener('click', () => {
-    if (guesses.length === 0) {
-      modeButton.innerText = choice.innerText;
-    };
-  });
-});
+onSelectClick(modeButton, modeChoices, guesses.length === 0);
