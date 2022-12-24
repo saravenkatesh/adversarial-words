@@ -1,4 +1,3 @@
-import { CORNCOB_WORD_LIST } from "./constants/harderWordList.js";
 import { normalModeSubmit } from "./modules/normalModeSubmit.js";
 import { onSelectClick, choicesToWordList } from "./utils.js";
 
@@ -31,15 +30,14 @@ const setWordList = () => {
 
 const onSubmit = () => {
   // TODO: Add a 'give up' button instead of logging the solution
-  console.log(wordList[wordIndex]);
-  console.log(wordListLength);
+  console.log(`The solution is ${wordList[wordIndex]}`);
 
   const guessWord = input.value;
   if (!input.value) {
     return;
   }
 
-  if (!CORNCOB_WORD_LIST.includes(guessWord)) {
+  if (!wordList.includes(guessWord)) {
     // TODO: add toggle that doesn't allow words not
     // on the list instead of logging this info
     console.log('Not a word that we know!');
@@ -47,7 +45,7 @@ const onSubmit = () => {
 
   normalModeSubmit({
     guess: guessWord,
-    solution: CORNCOB_WORD_LIST[wordIndex],
+    solution: wordList[wordIndex],
     guessHints,
     guessList,
     guesses,
