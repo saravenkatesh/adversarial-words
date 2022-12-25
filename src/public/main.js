@@ -1,3 +1,5 @@
+import { IMPOSSIBLE } from "./constants/choices.js";
+import { cheatingModeSubmit } from "./modules/cheatingModeSubmit.js";
 import { normalModeSubmit } from "./modules/normalModeSubmit.js";
 import { onSelectClick, choicesToWordList } from "./utils.js";
 
@@ -42,17 +44,31 @@ const onSubmit = () => {
     // on the list instead of logging this info
     console.log('Not a word that we know!');
   }
-
-  normalModeSubmit({
-    guess: guessWord,
-    solution: wordList[wordIndex],
-    guessHints,
-    guessList,
-    guesses,
-    successNode,
-    submit,
-    input
-  });
+  
+  if (modeButton.innerText === IMPOSSIBLE) {
+    wordList = cheatingModeSubmit({
+      guesses, 
+      guess: guessWord, 
+      wordList, 
+      guessHints, 
+      guessList, 
+      successNode, 
+      submit, 
+      input
+    })
+  } 
+  else {
+    normalModeSubmit({
+      guess: guessWord,
+      solution: wordList[wordIndex],
+      guessHints,
+      guessList,
+      guesses,
+      successNode,
+      submit,
+      input
+    });
+  };
 
   input.value = '';
 

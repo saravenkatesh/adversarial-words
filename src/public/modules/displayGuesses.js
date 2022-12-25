@@ -11,7 +11,7 @@ export const displayGuesses = (guesses, guess, guessList, guessHints, solution) 
 
     guessDiv.style.width = '256px';
     guessDiv.style.height = '40px';
-    guessDiv.style.backgroundColor = (guess === solution) ? '#fde68a' : '#d6d3d1';
+    guessDiv.style.backgroundColor = (solution && guess === solution) ? '#fde68a' : '#d6d3d1';
     guessDiv.style.borderRadius = "8px";
     guessDiv.style.verticalAlign = "middle";
     guessDiv.style.lineHeight = '40px';

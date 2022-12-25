@@ -1,5 +1,4 @@
 import { displayGuesses } from "./displayGuesses.js";
-import { appendGuessBox } from "./guessBox.js";
 import { handleSolution } from "./handleSolution.js";
 
 export const normalModeSubmit = ({guess, solution, guessHints, guesses, guessList, successNode, submit, input}) => {
