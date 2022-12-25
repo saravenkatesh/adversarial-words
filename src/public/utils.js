@@ -22,6 +22,7 @@ export const choicesToWordList = {
   },
   [GERMAN]: {
     [EASIER]: EASIER_GERMAN_WORD_LIST,
+    [HARDER]: EASIER_GERMAN_WORD_LIST,
     [IMPOSSIBLE]: EASIER_GERMAN_WORD_LIST,
   },
 };

@@ -1,4 +1,4 @@
-import { IMPOSSIBLE } from "./constants/choices.js";
+import { GERMAN, IMPOSSIBLE } from "./constants/choices.js";
 import { cheatingModeSubmit } from "./modules/cheatingModeSubmit.js";
 import { normalModeSubmit } from "./modules/normalModeSubmit.js";
 import { onSelectClick, choicesToWordList } from "./utils.js";
